@@ -86,7 +86,7 @@ pnpm preview:stage
 # 预览正式环境
 pnpm preview:prod
 ```
-## 目录结构
+## 📂 目录结构
 
 ```bash
 .
