@@ -13,7 +13,7 @@ console.log(import.meta.env.VITE_BASE_API);
         <div>
           <el-avatar :size="72" src="https://yaozongbin.pages.dev/head.jpg" />
         </div>
-        <div class="ml-10">
+        <div class="ml-5">
           <h3>🇨🇳&nbsp;Hello,I'm&nbsp;{{ userStore.username }}😎</h3>
           <p>今天又是充满活力的一天!</p>
         </div>
@@ -68,7 +68,6 @@ console.log(import.meta.env.VITE_BASE_API);
   }
 
   .avatar-box {
-    padding: 20px;
     width: 100%;
     display: flex;
     align-items: center;
