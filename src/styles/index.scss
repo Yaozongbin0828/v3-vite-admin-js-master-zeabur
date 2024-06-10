@@ -27,9 +27,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   @extend %scrollbar;
-
 }
-
 
 #app {
   height: 100%;

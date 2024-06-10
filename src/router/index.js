@@ -221,6 +221,15 @@ export const constantRoutes = [
         },
       },
       // 500
+      {
+        path: "/500",
+        component: () => import("@/views/error-page/500.vue"),
+        name: "500",
+        meta: {
+          title: "500",
+          svgIcon: "500",
+        },
+      },
     ],
   },
   //** About*/

@@ -8,17 +8,27 @@ console.log(import.meta.env.VITE_BASE_API);
 </script>
 <template>
   <div class="dashaboard-container">
+    <el-card class="m-0">
+      <div class="avatar-box">
+        <div>
+          <el-avatar :size="72" src="https://yaozongbin.pages.dev/head.jpg" />
+        </div>
+        <div class="ml-10">
+          <h3>🇨🇳&nbsp;Hello,I'm&nbsp;{{ userStore.username }}😎</h3>
+          <p>今天又是充满活力的一天!</p>
+        </div>
+      </div>
+    </el-card>
+
     <div class="dashaboard-container-item">
-      <el-card class="card_left m-5 mr-5">
-        <template #header
-          >🇨🇳&nbsp;Hello,I'm&nbsp;{{ userStore.username }}😎</template
-        >
+      <el-card class="card_left mt-15 mr-5">
+        <template #header>🎓 项目简介 🎓</template>
         <p>
-          🔥 基于 Vue3 + Vite + Pinia + Sass + Echarts + ElmentPlus UI
+          🔥 基于 Vue3 + Vite + Pinia + Sass + Echarts + ElmentPlus UI + Axios
           的轻量级后台管理模板 🔥
         </p>
       </el-card>
-      <el-card class="card_right m-5 mr-5" header="⚡ 项目地址 ⚡">
+      <el-card class="card_right mt-15" header="⚡ 项目地址 ⚡">
         <p>
           <el-button type="primary">
             <a
@@ -38,6 +48,14 @@ console.log(import.meta.env.VITE_BASE_API);
         </p>
       </el-card>
     </div>
+
+    <el-card class="screenshot mt-4">
+      <template #header>页面截图</template>
+      <img
+        src="@/assets/screenshot/screenshot.jpeg"
+        style="width: 100%"
+      />
+    </el-card>
   </div>
 </template>
 
@@ -45,6 +63,17 @@ console.log(import.meta.env.VITE_BASE_API);
 .dashaboard-container {
   min-height: 100%;
   padding: 20px;
+  .screenshot{
+    padding: 20px;
+  }
+
+  .avatar-box {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
   .dashaboard-container-item {
     display: flex;
     justify-content: space-around;
@@ -63,8 +92,12 @@ console.log(import.meta.env.VITE_BASE_API);
       }
     }
 
-    .m-5 {
-      margin: 0 0 5px 0;
+    .m-0 {
+      margin: 0;
+    }
+
+    .mt-15 {
+      margin-top: 15px;
     }
 
     .mr-5 {
@@ -76,11 +109,6 @@ console.log(import.meta.env.VITE_BASE_API);
     .dashaboard-container-item {
       display: block;
     }
-  }
-
-  .chart {
-    width: 100%;
-    height: 100%;
   }
 }
 </style>

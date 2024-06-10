@@ -44,8 +44,9 @@ const key = computed(() => {
   position: relative;
   overflow: auto;
   background-color: var(--v3-body-bg-color);
+  display: flex;
   .app-scrollabr {
-    flex-grow: 1 !important;
+    flex-grow: 1;
     overflow: auto;
     display: flex;
     flex-direction: column;
