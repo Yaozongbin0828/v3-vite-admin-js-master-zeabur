@@ -1,8 +1,5 @@
 <script setup>
-import { computed, ref, watch, nextTick } from "vue";
-// import { useRoute } from "vue";
-// import { ELScrollbar } from "element-plus";
-// import { ArrowLeft, ArrowRight } from "@element-plus/icons-vue";
+import { ref } from "vue";
 import { useSettingsStore } from "@/store/modules/settings";
 import Screenfull from "@/components/Screenfull/index.vue";
 
@@ -13,15 +10,8 @@ const props = defineProps({
   },
 });
 
-const scrollbarRef = ref();
 const scrollbarContentRef = ref();
-
-// const route = useRoute();
 const settingsStore = useSettingsStore();
-
-const showScreenfull = computed(() => {
-  return settingsStore.showScreenfull;
-});
 </script>
 <template>
   <div class="scroll-container">
@@ -29,13 +19,9 @@ const showScreenfull = computed(() => {
     <div ref="scrollbarContentRef" class="scrollbar-content">
       <slot />
     </div>
-
-    <Screenfull
-      v-if="showScreenfull"
-      element=".app-main"
-      class="screenfull"
-      openTips="内容区域全屏"
-    />
+    <div class="largeBtn">
+      <Screenfull v-if="settingsStore.showScreenfull" :content="true" />
+    </div>
   </div>
 </template>
 
@@ -50,13 +36,11 @@ const showScreenfull = computed(() => {
     display: inline-block;
   }
 
-  .screenfull {
+  .largeBtn {
     width: 40px;
-    vertical-align: middle;
-    position: fixed;
-    top: 55px;
-    right: 0;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 }

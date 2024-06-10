@@ -6,7 +6,7 @@ import {
   LegendComponent,
   ToolboxComponent,
 } from "echarts/components";
-import { BarChart, LineChart, PieChart, RadarChart } from "echarts/charts";
+import { BarChart, LineChart, PieChart } from "echarts/charts";
 import { UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import VChart from "vue-echarts";
@@ -16,7 +16,6 @@ echarts.use([
   ToolboxComponent,
   GridComponent,
   LegendComponent,
-  RadarChart,
   BarChart,
   LineChart,
   CanvasRenderer,
@@ -386,10 +385,15 @@ const histogramOption = {
       </el-card>
     </div>
   </div>
+  <div class="echarts-container-item">
+    <VChart :option="skillsOption" class="wh-full" autoresize />
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .echarts-container {
+  padding: 18px;
+  height: 100vh;
   .echarts-container-item {
     box-sizing: border-box;
     max-width: 100%;

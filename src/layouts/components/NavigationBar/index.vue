@@ -4,9 +4,12 @@ import { useRouter } from "vue-router";
 import { useAppStore } from "@/store/modules/app";
 import { UserFilled } from "@element-plus/icons-vue";
 import { useUserStore } from "@/store/modules/user";
+import { useSettingsStore } from "@/store/modules/settings";
 
 import Breadcrumb from "../Breadcrumb/index.vue";
 import Hamburger from "../Hamburger/index.vue";
+import TopPanel from "../TopPanel/index.vue";
+import Settings from "../Settings/index.vue";
 import Screenfull from "@/components/Screenfull/index.vue";
 import Notify from "@/components/Notify/index.vue";
 
@@ -19,9 +22,18 @@ import Logout from "@/icons/svg/logout.svg?component";
 const appStore = useAppStore();
 const userStore = useUserStore();
 const router = useRouter();
+const settingsStore = useSettingsStore();
+
+const showSettings = computed(() => {
+  return settingsStore.showSettings;
+});
 
 const sidebar = computed(() => {
   return appStore.sidebar;
+});
+
+const showScreenfull = computed(() => {
+  return settingsStore.showScreenfull;
 });
 
 /** Sidebar默认为false*/
@@ -48,10 +60,15 @@ const logout = () => {
     <!-- 右边组件 -->
     <div class="right-menu">
       <!-- Screenfull 全屏-->
-      <Screenfull />
+      <Screenfull :class="{ screenfull: showScreenfull }" />
       <!-- ThemeSwitch 主题切换 -->
+      <!-- TopPanel页面操控 -->
+      <TopPanel v-if="showSettings">
+        <Settings />
+      </TopPanel>
       <!-- Notify 通知 -->
       <Notify />
+
       <el-dropdown class="right-menu-item">
         <!-- 用户名 头像 -->
         <div class="right-menu-avatar">
@@ -63,7 +80,7 @@ const logout = () => {
             <a target="_blank" href="https://yaozongbin.pages.dev/">
               <el-dropdown-item><Blog /> &nbsp;博客</el-dropdown-item>
             </a>
-            <a target="_blank" href="https://github.com/yaozongbin">
+            <a target="_blank" href="https://github.com/yaozongbin0828">
               <el-dropdown-item><Github /> &nbsp;Github </el-dropdown-item>
             </a>
             <a target="_blank" href="https://gitee.com/yaozongbin">

@@ -32,7 +32,8 @@ const key = computed(() => {
 @import "@/styles/mixins.scss";
 
 .fixed-header + .app-main {
-  padding-top: var(--v3-navigationbar-height);
+  padding-top: var(--v3-header-height);
+  margin-bottom: var(--v3-footer-height);
   height: 100vh;
   overflow: auto;
 }
@@ -43,9 +44,8 @@ const key = computed(() => {
   position: relative;
   overflow: auto;
   background-color: var(--v3-body-bg-color);
-
   .app-scrollabr {
-    flex-grow: 1;
+    flex-grow: 1 !important;
     overflow: auto;
     display: flex;
     flex-direction: column;

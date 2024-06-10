@@ -24,7 +24,6 @@ export const useTagsViewStore = defineStore("tags-view", () => {
     }
     visitedViews.value.push(Object.assign({}, view));
   };
-
   const addCachedView = (view) => {
     if (typeof view.name !== "string") return;
     if (cachedViews.value.includes(view.name)) return;
@@ -34,10 +33,28 @@ export const useTagsViewStore = defineStore("tags-view", () => {
   };
   //#endregion
 
+  //#region del
+  const delVisitedView = (view) => {
+    for (const [i, v] of visitedViews.value.entries()) {
+      if (v.path === view.path) {
+        visitedViews.value.splice(i, 1);
+        break;
+      }
+    }
+  };
+  const delCachedView = (view) => {
+    if (typeof view.name !== "string") return;
+    const index = cachedViews.value.indexOf(view.name);
+    index > -1 && cachedViews.value.splice(index, 1);
+  };
+  //#endregion
+
   return {
     visitedViews,
     cachedViews,
     addVisitedView,
     addCachedView,
+    delVisitedView,
+    delCachedView,
   };
 });

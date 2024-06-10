@@ -16,7 +16,7 @@ const showElNotification = () => {
     dangerouslyUseHTMLString: true,
     message:
       "<p>项目还在完善中,可以先看看以下作品!<a style='color: teal' target='_blank' href='https://yaozongbin.pages.dev/'>个人博客</a> <a style='color: teal' target='_blank' href='https://yaozongbiniphone14pro.zeabur.app/'>灵动岛</a> </p>",
-    duration: 0,
+    duration: 3000,
     position: "bottom-right",
   });
 };

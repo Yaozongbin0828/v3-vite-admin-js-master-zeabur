@@ -1,6 +1,5 @@
 <script setup>
 import { useUserStore } from "@/store/modules/user";
-import Echarts from "@/components/Echarts/index.vue";
 
 const userStore = useUserStore();
 
@@ -39,28 +38,26 @@ console.log(import.meta.env.VITE_BASE_API);
         </p>
       </el-card>
     </div>
-
-    <div class="chart">
-      <Echarts />
-    </div>
   </div>
 </template>
 
 <style lang="scss">
 .dashaboard-container {
-  margin: 32px 0 0 0;
   min-height: 100%;
+  padding: 20px;
   .dashaboard-container-item {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     .card_left {
       flex: 2;
+      padding: 20px;
     }
 
     .card_right {
       flex: 1;
-
+      padding: 20px;
       .el-card__body {
         padding: 14.5px !important;
       }

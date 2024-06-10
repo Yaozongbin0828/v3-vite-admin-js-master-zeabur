@@ -7,7 +7,6 @@
   --v3-header-height: calc(
     var(--v3-navigationbar-height) + var(--v3-tagsview-height)
   );
-
   /** NavigationBar 组件 */
   --v3-navigationbar-height: 50px;
   /** Sidebar 组件 */
@@ -36,4 +35,18 @@
   /** Footer组件*/
   --v3-footer-background-color: #fff;
   --v3-footer-height: 45px;
+}
+
+/** 内容区放大时，将不需要的组件隐藏 */
+body.content-large {
+  /** Header 区域 = TagsView 组件 */
+  --v3-header-height: var(--v3-tagsview-height);
+  /** NavigationBar 组件 */
+  --v3-navigationbar-height: 0px;
+  /** Sidebar 组件 */
+  --v3-sidebar-width: 0px;
+  --v3-sidebar-hide-width: 0px;
+  /** Footer组件*/
+  --v3-footer-height: 0px;
+  --v3-footer-display-none: none;
 }

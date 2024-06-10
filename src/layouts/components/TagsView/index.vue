@@ -3,6 +3,7 @@ import { getCurrentInstance, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useTagsViewStore } from "@/store/modules/tags-view";
 import { usePermissionStore } from "@/store/modules/permission";
+import { Close } from "@element-plus/icons-vue";
 
 import ScrollPane from "./ScrollPane.vue";
 import path from "path-browserify";
@@ -52,11 +53,21 @@ const initTags = () => {
   }
 };
 
+/** 关闭当前正在右键操作的标签页 */
+const closeSelectedTag = (view) => {
+  tagsViewStore.delVisitedView(view);
+  tagsViewStore.delCachedView(view);
+};
+
 const addTags = () => {
   if (route.name) {
     tagsViewStore.addVisitedView(route);
     tagsViewStore.addCachedView(route);
   }
+};
+
+const isAffix = (tag) => {
+  return tag.meta?.affix;
 };
 
 watch(
@@ -83,9 +94,18 @@ onMounted(() => {
         :key="tag.path"
         :class="isActive(tag) ? 'active' : ''"
         :to="{ path: tag.path, query: tag.query }"
+        @click.middle="!isAffix(tag) && closeSelectedTag(tag)"
         class="tags-view-item"
       >
         {{ tag.meta?.title }}
+
+        <el-icon
+          v-if="!isAffix(tag)"
+          :size="12"
+          @click.prevent.stop="closeSelectedTag(tag)"
+        >
+          <Close class="close" />
+        </el-icon>
       </router-link>
     </ScrollPane>
   </div>
@@ -115,6 +135,12 @@ onMounted(() => {
       margin-left: 5px;
       margin-top: 4px;
 
+      .close {
+        vertical-align: middle;
+        position: absolute;
+        top: 2px;
+      }
+
       &:first-of-type {
         margin-left: 7px;
       }
@@ -127,18 +153,6 @@ onMounted(() => {
         background-color: var(--v3-tagsview-tag-active-bg-color);
         color: var(--v3-tagsview-tag-active-text-color);
         border-color: var(--v3-tagsview-tag-active-border-color);
-
-        &::before {
-          content: "";
-          background-color: var(--v3-tagsview-tag-active-before-color);
-          display: inline-block;
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          vertical-align: middle;
-          position: relative;
-          margin-right: 3px;
-        }
       }
     }
   }

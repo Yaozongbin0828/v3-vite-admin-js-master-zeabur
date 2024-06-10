@@ -41,10 +41,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .dependency-container {
-  margin: 30px 0 0 0;
   width: 100%;
   height: 100%;
-
+  padding: 20px;
   .dependency-item {
     border-top: 1px solid rgb(239, 239, 245);
 

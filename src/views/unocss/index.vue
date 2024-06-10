@@ -32,6 +32,12 @@
               <Position /> </el-icon
           ></a>
         </div>
+        <button class="unocss" @click="toggleTextVisibility">
+          UnoCSS Text
+        </button>
+        <p v-if="showText" animate-bounce-alt animate-count-infinite animate-1s>
+          This is the UnoCSS.
+        </p>
       </div>
     </div>
   </div>
@@ -39,5 +45,21 @@
 
 <script setup>
 import { Position } from "@element-plus/icons-vue";
+import { ref } from "vue";
+
+const showText = ref(false);
+
+const toggleTextVisibility = () => {
+  showText.value = !showText.value;
+};
 </script>
-<style scoped></style>
+<style lang="scss" scoped>
+.unocss {
+  padding: 10px 20px;
+  background-color: #2789e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>

@@ -18,17 +18,28 @@ const classObj = computed(() => {
     openSidebar: appStore.sidebar.opened,
     withoutAnimation: appStore.sidebar.withoutAnimation,
     mobile: appStore.device === DeviceType.Mobile,
+    showGreyMode: showGreyMode.value,
+    showColorWeakness: showColorWeakness.value,
   };
 });
 
-/** 固定顶部*/
+const showTagsView = computed(() => {
+  return settingsStore.showTagsView;
+});
+
+const showGreyMode = computed(() => {
+  return settingsStore.showGreyMode;
+});
+const showColorWeakness = computed(() => {
+  return settingsStore.showColorWeakness;
+});
+
 const fixedHeader = computed(() => {
   return settingsStore.fixedHeader;
 });
 
-/** 固定页脚*/
 const fixedFooter = computed(() => {
-  return settingsStore.fixedHeader;
+  return settingsStore.fixedFooter;
 });
 
 const handleClickOutside = () => {
@@ -44,10 +55,10 @@ const handleClickOutside = () => {
       @click="handleClickOutside"
     />
     <Sidebar class="sidebar-container" />
-    <div class="main-container">
+    <div :class="{ hasTagsView: showTagsView }" class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <NavigationBar />
-        <TagsView />
+        <TagsView v-show="showTagsView" />
       </div>
       <AppMain />
       <!-- 页脚 -->
@@ -63,6 +74,14 @@ const handleClickOutside = () => {
   @include clearfix;
   position: relative;
   width: 100%;
+}
+
+.showGreyMode {
+  filter: grayscale(1);
+}
+
+.showColorWeakness {
+  filter: invert(0.8);
 }
 
 .drawer-bg {
@@ -109,7 +128,7 @@ const handleClickOutside = () => {
 .fixed-footer {
   position: fixed;
   bottom: 0;
-  z-index: 9;
+  z-index: 0;
   right: 0;
   width: calc(100% - var(--v3-sidebar-width));
   transition: width 0.28s;

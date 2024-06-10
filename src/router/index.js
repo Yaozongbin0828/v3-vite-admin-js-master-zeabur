@@ -48,6 +48,23 @@ export const constantRoutes = [
       },
     ],
   },
+  /** Echarts*/
+  {
+    path: "/echarts",
+    component: Layout,
+    redirect: "/echarts/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/echarts/index.vue"),
+        name: "Echarts",
+        meta: {
+          title: "Echarts",
+          svgIcon: "echarts",
+        },
+      },
+    ],
+  },
   /** Multi-level-menu*/
   {
     path: "/menu",
@@ -155,7 +172,7 @@ export const constantRoutes = [
       },
       //Github
       {
-        path: "https://github.com/yaozongbin",
+        path: "https://github.com/yaozongbin0828",
         component: () => {},
         name: "ExternalLink1",
         meta: {
