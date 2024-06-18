@@ -12,6 +12,7 @@ import TopPanel from "../TopPanel/index.vue";
 import Settings from "../Settings/index.vue";
 import Screenfull from "@/components/Screenfull/index.vue";
 import Notify from "@/components/Notify/index.vue";
+import ThemeSwitch from "@/components/ThemeSwitch/index.vue";
 
 /** vite-svg-loader 插件的功能 svg转化为组件形式*/
 import Github from "@/icons/svg/github-nav.svg?component";
@@ -59,9 +60,10 @@ const logout = () => {
     <Breadcrumb class="breadcrumb" />
     <!-- 右边组件 -->
     <div class="right-menu">
+      <!-- ThemeSwitch 主题切换 -->
+      <ThemeSwitch class="right-menu-item" style="padding: 3px 12px 0 0" />
       <!-- Screenfull 全屏-->
       <Screenfull :class="{ screenfull: showScreenfull }" />
-      <!-- ThemeSwitch 主题切换 -->
       <!-- TopPanel页面操控 -->
       <TopPanel v-if="showSettings">
         <Settings />

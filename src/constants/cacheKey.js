@@ -10,6 +10,8 @@ class CacheKey {
   static SIDEBAR_STATUS = `${SYSTEM_NAME}-sidebar-status-key`;
   //主题
   static ACTIVE_THEME_NAME = `${SYSTEM_NAME}-active-theme-name-key`;
+  //布局
+  static CONFIG_LAYOUT = `${SYSTEM_NAME}-config-layout-key`;
 }
 
 export default CacheKey;

@@ -1,6 +1,8 @@
-/** 布局配置 */
+import { LayoutModeType } from "@/constants/app-key";
 
+/** 布局配置 */
 const layoutSettings = {
+  layoutMode: LayoutModeType.Left /** 布局模式 */,
   showSettings: true /** 是否显示标签栏 */,
   showTagsView: true /** 是否显示标签页  */,
   fixedHeader: true /** 是否固定 Header */,

@@ -11,6 +11,12 @@ const VITE_APP_TITLE = import.meta.env.VITE_APP_TITLE;
 console.log(" MIT © 2023-PRESENT @yaozongbin" + " " + VITE_APP_TITLE);
 </script>
 <style scoped lang="scss">
+@media screen and (max-width: 768px) {
+  .layout-footer {
+    display: none !important;
+  }
+}
+
 .layout-footer {
   width: 100%;
   height: var(--v3-footer-height);

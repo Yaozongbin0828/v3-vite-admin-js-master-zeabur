@@ -5,6 +5,7 @@ import { useSettingsStore } from "@/store/modules/settings";
 import { AppMain, NavigationBar, Sidebar, TagsView } from "./components";
 import useResize from "./hooks/useResize";
 import Footer from "./components/Footer/index.vue";
+// import TopMode from "./TopMode.vue";
 
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();
@@ -71,7 +72,7 @@ const handleClickOutside = () => {
 @import "@/styles/mixins.scss";
 
 .app-wrapper {
-  @include clearfix;
+  // @include clearfix;
   position: relative;
   width: 100%;
 }

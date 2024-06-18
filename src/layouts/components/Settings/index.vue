@@ -1,11 +1,14 @@
 <script setup>
 import { useSettingsStore } from "@/store/modules/settings";
-
+import SelectLayoutMode from "./SelectLayoutMode.vue";
 const settingsStore = useSettingsStore();
 </script>
 
 <template>
   <div class="drawer-container">
+    <h4 style="text-align: center">布局配置</h4>
+    <SelectLayoutMode />
+
     <div>
       <h3 class="drawer-title">系统布局配置</h3>
       <div class="drawer-item">
@@ -70,6 +73,8 @@ const settingsStore = useSettingsStore();
   .drawer-title {
     margin-bottom: 12px;
     font-size: 14px;
+    text-align: center;
+
     line-height: 22px;
   }
 

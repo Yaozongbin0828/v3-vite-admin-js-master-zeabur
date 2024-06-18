@@ -9,6 +9,8 @@ const transformVersionData = (tuple) => {
   return { name, version };
 };
 
+
+
 onMounted(() => {
   // pkg 是从外部传入的 package.json 对象
   dependencies.value = Object.entries(pkg.dependencies).map((item) =>

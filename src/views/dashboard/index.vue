@@ -51,10 +51,7 @@ console.log(import.meta.env.VITE_BASE_API);
 
     <el-card class="screenshot mt-4">
       <template #header>页面截图</template>
-      <img
-        src="@/assets/screenshot/screenshot.jpeg"
-        style="width: 100%"
-      />
+      <img src="@/assets/screenshot/screenshot.jpeg" style="width: 100%" />
     </el-card>
   </div>
 </template>
@@ -63,7 +60,7 @@ console.log(import.meta.env.VITE_BASE_API);
 .dashaboard-container {
   min-height: 100%;
   padding: 20px;
-  .screenshot{
+  .screenshot {
     padding: 20px;
   }
 
