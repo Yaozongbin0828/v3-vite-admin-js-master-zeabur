@@ -33,7 +33,7 @@ console.log(import.meta.env.VITE_BASE_API);
           <el-button type="primary">
             <a
               class="primary"
-              href="https://github.com/yaozongbin/v3-vite-admin-js-master"
+              href="https://github.com/Yaozongbin0828/v3-vite-admin-js-master-zeabur"
               huo
               >项目源码
             </a>
@@ -41,7 +41,7 @@ console.log(import.meta.env.VITE_BASE_API);
           <el-button type="primary" plain>
             <a
               class="primary-plain"
-              href="https://yaozongbin.pages.dev/categories/Vue/1/"
+              href="https://yaozongbin.pages.dev/blogs/category/Vue/v3AdminVite1.html"
               >教程文档
             </a>
           </el-button>

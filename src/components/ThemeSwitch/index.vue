@@ -1,8 +1,9 @@
 <script setup>
+import { onMounted } from "vue";
 import { useTheme } from "@/hooks/useTheme";
 import { Sunny } from "@element-plus/icons-vue";
 
-const { themeList, activeThemeName, setTheme } = useTheme();
+const { themeList, activeThemeName, setTheme, initTheme } = useTheme();
 
 const handleChangeTheme = (event, themeName) => {
   const clientX = event.clientX;
@@ -13,18 +14,27 @@ const handleChangeTheme = (event, themeName) => {
   );
 
   const style = document.documentElement.style;
-  console.log(style);
-  style.setProperty("--v3-theme-x", clientX + "px");
-  style.setProperty("--v3-theme-y", clientY + "px");
-  style.setProperty("--v3-theme-r", maxRadius + "px");
+  style.setProperty("--v3-theme-x", `${clientX}px`);
+  style.setProperty("--v3-theme-y", `${clientY}px`);
+  style.setProperty("--v3-theme-r", `${maxRadius}px`);
+
   const handler = () => {
-    setTheme(themeName);
-    // console.log(themeName);
+    document.body.classList.add("theme-transition");
+    setTimeout(() => {
+      setTheme(themeName);
+      document.body.classList.remove("theme-transition");
+    }, 500);
   };
+
   document.startViewTransition
     ? document.startViewTransition(handler)
     : handler();
 };
+
+// 初始化主题
+onMounted(() => {
+  initTheme();
+});
 </script>
 
 <template>
@@ -43,7 +53,7 @@ const handleChangeTheme = (event, themeName) => {
             v-for="(theme, index) in themeList"
             :key="index"
             :disabled="activeThemeName === theme.name"
-            @click="($event) => handleChangeTheme($event, theme.name)"
+            @click="handleChangeTheme($event, theme.name)"
           >
             <span>{{ theme.title }}</span>
           </el-dropdown-item>
@@ -52,7 +62,3 @@ const handleChangeTheme = (event, themeName) => {
     </el-dropdown>
   </div>
 </template>
-
-<style scoped>
-/* 如果需要添加样式，则在这里添加 */
-</style>

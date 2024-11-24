@@ -48,6 +48,14 @@
   --v3-hamburger-text-color: var(--el-text-color-primary);
   /** RightPanel 组件  */
   --v3-rightpanel-button-bg-color: #001428;
+  /** 主题切换 **/
+  --v3-theme-x: 0px;
+  --v3-theme-y: 0px;
+  --v3-theme-r: 0px;
+  --el-color-primary: #409eff; /* 默认主题色 */
+  /* Footer */
+  --v3-footer-background-color: #fff;
+  --v3-footer-height: 40px;
 }
 
 /** 内容区放大时，将不需要的组件隐藏 */

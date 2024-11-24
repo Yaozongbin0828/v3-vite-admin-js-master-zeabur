@@ -23,7 +23,7 @@ echarts.use([
   PieChart,
 ]);
 
-/** 技术栈 饼状图*/
+/** 饼状图*/
 const skillsOption = {
   tooltip: {
     trigger: "item",

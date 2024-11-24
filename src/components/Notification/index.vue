@@ -15,8 +15,8 @@ const showElNotification = () => {
     type: "success",
     dangerouslyUseHTMLString: true,
     message:
-      "<p>项目还在完善中,可以先看看以下作品!<a style='color: teal' target='_blank' href='https://yaozongbin.pages.dev/'>个人博客</a> <a style='color: teal' target='_blank' href='https://yaozongbiniphone14pro.zeabur.app/'>灵动岛</a> </p>",
-    duration: 3000,
+      "<p>项目还在完善中,可以先看看以下作品!<a style='color: teal' target='_blank' href='https://yaozongbin.pages.dev/'>个人博客</a> <a style='color: teal' target='_blank' href='https://jquery.zeabur.app/'>数字记忆训练</a><br><a style='color: teal' target='_blank' href='https://iphone14-pro.zeabur.app/'>仿灵动岛动画</a> <a style='color: teal' target='_blank' href='https://react-todolist.zeabur.app/'>React-Todolist</a> </p>",
+    duration: 5000,
     position: "bottom-right",
   });
 };

@@ -1,124 +1,31 @@
-<div align="center">
-  <img alt="V3 Admin Vite Logo" width="120" height="120" src="./src/assets/layout/logo.png">
-  <h1>V3 Admin Vite</h1>
-  <span>English | <a href="./README.zh-CN.md">中文</a></span>
-</div>
+## 项目简介
 
-## Introduction
+一个免费开源的中后台管理系统基础解决方案，基于 Vue3、JavaScript、Element Plus、Pinia 和 Vite 等主流技术.
 
-v3-admin-vite is a free and open source middle and background management system basic solution, based on mainstream framework such as Vue3, JavaScript, Element Plus, Pinia and Vite.
+## 特性
 
-- Vue-Cli 5.x: [v3-admin](https://github.com/un-pany/v3-admin)
-- Electron desktop: [v3-electron-vite](https://github.com/un-pany/v3-electron-vite)
+- **Vue3**：采用 Vue3 + script setup 最新的 Vue3 组合式 API
+- **Element Plus**：Element UI 的 Vue3 版本
+- **Pinia**: 传说中的 Vuex5
+- **Vite**：真的很快
+- **Echarts**：一个基于 JavaScript 的开源可视化图表库
+- **Vue Router**：路由路由
+- **PNPM**：更快速的，节省磁盘空间的包管理工具
+- **Scss**：和 Element Plus 保持一致
+- **CSS 变量**：主要控制项目的布局和颜色
+- **ESlint**：代码校验
+- **Prettier**：代码格式化
+- **Axios**：发送网络请求（已封装好）
+- **UnoCSS**：具有高性能且极具灵活性的即时原子化 CSS 引擎
+- **注释**：各个配置项都写有尽可能详细的注释
+- **兼容移动端**: 布局兼容移动端页面分辨率
 
-## Feature
+## 功能
 
-- **Vue3**：The latest Vue3 composition API using Vue3 + script setup
-- **Element Plus**：Vue3 version of Element UI
-- **Pinia**: An alternative to Vuex in Vue3
-- **Echarts：**An open-source visualization chart library based on JavaScript
-- **Vite**：Really fast
-- **Vue Router**：router
-- **JavaScript**：JavaScript
-- **PNPM**：Faster, disk space saving package management tool
-- **Scss**：Consistent with Element Plus
-- **CSS variable**：Mainly controls the layout and color of the item
-- **ESlint**：Code verification
-- **Prettier**： Code formatting
-- **Axios**: Promise based HTTP client (encapsulated)
-- **UnoCSS**: Real-time atomized CSS engine with high performance and flexibility
-- **Annotation**：Each configuration item is written with as detailed comments as possible
-- **Mobile Compatible**: The layout is compatible with mobile page resolution
-
-## Functions
-
-- **User management**: log in, log out of the demo
-- **Authority management**: Built-in page permissions (dynamic routing), instruction permissions, permission functions
-- **Multiple Environments**: Development, Staging, Production
-- **Multiple themes**: Normal, Dark, Dark Blue, theme modes
-- **Error page**: 403, 404
-- **Dashboard**: Display different Dashboard pages according to different users
-- **Other functions**：SVG, Dynamic Sidebar, Dynamic Breadcrumb Navigation, Tabbed Navigation, Screenfull, Adaptive Shrink Sidebar
-
-## 📚 Document
-
-[Chinese documentation](https://juejin.cn/post/7089377403717287972)
-
-[Chinese getting started tutorial](https://juejin.cn/column/7207659644487139387)
-
-## Gitee repository
-
-[Gitee](https://gitee.com/un-pany/v3-admin-vite)
-
-## Online preview
-
-| Location     | account                 | Link                                         |
-| ------------ | ----------------------- | -------------------------------------------- |
-| github-pages | `admin` or `editor` | [Link](https://un-pany.github.io/v3-admin-vite) |
-
-## 🚀Development
-
-```bash
-# configure
-1. installation of the recommended plugins in the .vscode directory
-3. node version 16+
-4. pnpm version 7.x
-
-# clone
-git clone https://github.com/un-pany/v3-admin-vite.git
-
-# enter the project directory
-cd v3-admin-vite
-
-# install dependencies
-pnpm i
-
-# start the service
-pnpm dev
-```
-
-## ✔️ Preview
-
-```bash
-# stage environment
-pnpm preview:stage
-
-# prod environment
-pnpm preview:prod
-```
-
-## 📦️ Multi-environment packaging
-
-```bash
-# build the stage environment
-pnpm build:stage
-
-# build the prod environment
-pnpm build:prod
-```
-
-## 🔧 Code inspection
-
-```bash
-# code formatting
-pnpm lint
-
-# unit test
-pnpm test
-```
-
-## Git commit specification reference
-
-- `feat` add new functions
-- `fix` Fix issues/bugs
-- `perf` Optimize performance
-- `style` Change the code style without affecting the running result
-- `refactor` Re-factor code
-- `revert` Undo changes
-- `test` Test related, does not involve changes to business code
-- `docs` Documentation and Annotation
-- `chore` Updating dependencies/modifying scaffolding configuration, etc.
-- `workflow` Work flow Improvements
-- `ci` CICD
-- `types` Type definition
-- `wip` In development
+- **用户管理**：登录、登出演示
+- **权限管理**：内置页面权限（动态路由）、指令权限、权限函数、路由守卫
+- **多环境**：开发环境（development）、预发布环境（staging）、正式环境（production）
+- **多主题**：内置普通、黑暗、深蓝三种主题模式
+- **错误页面**: 403、404
+- **Dashboard**：根据不同用户显示不同的 Dashboard 页面
+- **其他内置功能**：SVG、动态侧边栏、动态面包屑、标签页快捷导航、Screenfull 全屏、自适应收缩侧边栏
