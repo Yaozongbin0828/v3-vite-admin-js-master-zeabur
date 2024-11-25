@@ -197,8 +197,9 @@ const handleStartGame = () => {
 };
 
 const restartGame = () => {
-  isGameStarted.value = false; // 重置为未开始状态
+  isGameStarted.value = false;
   clearInterval(timerInterval);
+  startGame();
 };
 </script>
 
