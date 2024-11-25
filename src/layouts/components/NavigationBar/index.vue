@@ -105,7 +105,7 @@ const logout = () => {
 .navigation-bar {
   height: var(--v3-navigationbar-height);
   overflow: hidden;
-  background: #fff;
+  background: var(--v3-navigationbar-bg-clor);
 
   .hamburger {
     display: flex;

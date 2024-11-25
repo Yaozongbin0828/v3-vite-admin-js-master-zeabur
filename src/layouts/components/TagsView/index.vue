@@ -115,7 +115,7 @@ onMounted(() => {
 .tags-view-container {
   height: var(--v3-tagsview-height);
   width: 100%;
-  background-color: #fff;
+  background-color: var(--v3-tagview-bg-color);
   border-bottom: 1px solid #d8dce5;
   box-shadow: 0 1px 3px 0 #00000010, 0 0 3px 0 #00000010;
 

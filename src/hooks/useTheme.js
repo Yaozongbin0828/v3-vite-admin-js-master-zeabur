@@ -8,20 +8,20 @@ const DEFAULT_THEME_NAME = "normal";
 
 const themeList = [
   { title: "默认", name: DEFAULT_THEME_NAME },
-  { title: "黑暗", name: "dark" },
+  { title: "暗黑", name: "dark" },
   { title: "深蓝", name: "dark-blue" },
 ];
 
 const activeThemeName = ref(getActiveThemeName() || DEFAULT_THEME_NAME);
 
 const setTheme = (value) => {
-  console.log("Setting theme:", value);
+  console.log("主题模式:", value);
   activeThemeName.value = value;
 };
 
 const setHtmlRootClassName = (value) => {
   document.documentElement.className = value;
-  console.log("HTML root class set to:", value); // 调试输出
+  console.log("设置主题模式:", value); 
 };
 
 const initTheme = () => {

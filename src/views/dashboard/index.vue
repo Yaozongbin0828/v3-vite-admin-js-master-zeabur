@@ -2,9 +2,6 @@
 import { useUserStore } from "@/store/modules/user";
 
 const userStore = useUserStore();
-
-/** api/v1 */
-console.log(import.meta.env.VITE_BASE_API);
 </script>
 <template>
   <div class="dashaboard-container">

@@ -172,7 +172,7 @@ export const constantRoutes = [
       },
       //Github
       {
-        path: "https://github.com/yaozongbin0828",
+        path: "https://github.com/Yaozongbin0828/v3-vite-admin-js-master-zeabur",
         component: () => {},
         name: "ExternalLink1",
         meta: {
@@ -245,6 +245,23 @@ export const constantRoutes = [
         meta: {
           title: "关于",
           svgIcon: "about",
+        },
+      },
+    ],
+  },
+  // Typing Games
+  {
+    path: "/game",
+    component: Layout,
+    redirect: "/typing-games/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/typing-games/index"),
+        name: "game",
+        meta: {
+          title: "Game",
+          svgIcon: "game",
         },
       },
     ],

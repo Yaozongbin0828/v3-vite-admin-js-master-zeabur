@@ -50,6 +50,7 @@ onMounted(() => {
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item
+            aria-hidden="true"
             v-for="(theme, index) in themeList"
             :key="index"
             :disabled="activeThemeName === theme.name"
