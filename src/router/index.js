@@ -249,23 +249,6 @@ export const constantRoutes = [
       },
     ],
   },
-  // Typing Games
-  {
-    path: "/game",
-    component: Layout,
-    redirect: "/typing-games/index",
-    children: [
-      {
-        path: "index",
-        component: () => import("@/views/typing-games/index"),
-        name: "game",
-        meta: {
-          title: "Game",
-          svgIcon: "game",
-        },
-      },
-    ],
-  },
 ];
 
 /** 权限页面路由*/

@@ -30,9 +30,9 @@ export default defineConfig({
     /** 设置host:true 才可以使用Network的形式，以IP访问项目*/
     host: true, // host:"0.0.0.0"
     /** 端口号*/
-    port: 8888,
+    port: 8080,
     /** 是否自动打开浏览器*/
-    open: false,
+    open: true,
     /** 跨域设置允许 */
     cors: true,
     /** 端口被占用时，是否直接退出*/

@@ -14,6 +14,10 @@ html.dark {
   --v3-footer-background-color: rgb(29, 30, 33);
 }
 
+html.dark .el-sub-menu__title {
+  background-color: rgb(20, 20, 20) !important;
+}
+
 html.dark .descriptions-table td {
   background-color: rgb(29, 30, 31) !important;
   color: #fff !important;
@@ -126,13 +130,15 @@ html.dark-blue {
   --v3-footer-background-color: #001b44;
 }
 
-/** button */
 html.dark-blue .el-button {
   --el-button-disabled-text-color: rgba(255, 255, 255, 0.5);
 }
 
-/* about */
 html.dark-blue .descriptions-table td {
   background-color: #001b44 !important;
   color: #fff !important;
+}
+
+html.dark-blue .el-sub-menu__title {
+  background-color: #001b44 !important;
 }

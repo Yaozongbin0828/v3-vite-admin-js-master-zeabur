@@ -2,6 +2,12 @@
 
 一个免费开源的中后台管理系统基础解决方案，基于 Vue3、JavaScript、Element Plus、Pinia 和 Vite 等主流技术.
 
+## 项目启动
+
+
+
+pnpm install(推荐) 或者 npm install
+
 ## 特性
 
 - **Vue3**：采用 Vue3 + script setup 最新的 Vue3 组合式 API
