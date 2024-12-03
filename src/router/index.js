@@ -65,6 +65,24 @@ export const constantRoutes = [
       },
     ],
   },
+  // Table
+  {
+    path: "/table",
+    component: Layout,
+    redirect: "/table/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/table/index.vue"),
+        name: "Table",
+        meta: {
+          title: "表格",
+          svgIcon: "table",
+        },
+      },
+    ],
+  },
+
   /** Multi-level-menu*/
   {
     path: "/menu",
@@ -160,7 +178,7 @@ export const constantRoutes = [
       svgIcon: "link",
     },
     children: [
-      //Blog
+      // Blog
       {
         path: "https://yaozongbin.pages.dev/",
         component: () => {},
@@ -180,7 +198,7 @@ export const constantRoutes = [
           svgIcon: "github",
         },
       },
-      //Gitee
+      // Gitee
       {
         path: "https://gitee.com/yaozongbin",
         component: () => {},
@@ -188,6 +206,16 @@ export const constantRoutes = [
         meta: {
           title: "源码 - Gitee",
           svgIcon: "gitee",
+        },
+      },
+      // Element-plus
+      {
+        path: "https://element-plus-docs.bklab.cn/zh-CN/",
+        component: () => {},
+        name: "ExternalLink4",
+        meta: {
+          title: "Element-plus",
+          svgIcon: "element-plus",
         },
       },
     ],
